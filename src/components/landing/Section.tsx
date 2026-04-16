@@ -1,11 +1,22 @@
+import { useState } from "react"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import Icon from "@/components/ui/icon"
+import PaymentModal from "./PaymentModal"
 import type { SectionProps } from "@/types"
 
 export default function Section({ id, title, subtitle, content, isActive, showButton, buttonText, pricing, image, features }: SectionProps) {
+  const [modal, setModal] = useState<{ open: boolean; planName?: string; planPrice?: string }>({ open: false })
+
   return (
     <section id={id} className="relative h-screen w-full snap-start flex flex-col justify-center p-8 md:p-16 lg:p-24">
+
+      <PaymentModal
+        open={modal.open}
+        onClose={() => setModal({ open: false })}
+        planName={modal.planName}
+        planPrice={modal.planPrice}
+      />
 
       {image ? (
         <div className="flex flex-col lg:flex-row items-center gap-10 w-full max-w-6xl">
@@ -48,6 +59,7 @@ export default function Section({ id, title, subtitle, content, isActive, showBu
                 <Button
                   variant="outline"
                   size="lg"
+                  onClick={() => setModal({ open: true })}
                   className="text-[#FF4D00] bg-transparent border-[#FF4D00] hover:bg-[#FF4D00] hover:text-black transition-colors"
                 >
                   {buttonText}
@@ -161,6 +173,7 @@ export default function Section({ id, title, subtitle, content, isActive, showBu
               </ul>
               <Button
                 size="sm"
+                onClick={() => setModal({ open: true, planName: plan.name, planPrice: plan.price })}
                 className={`mt-2 w-full font-bold transition-colors ${
                   plan.highlighted
                     ? 'bg-[#FF4D00] text-black hover:bg-[#ff6a2a]'
@@ -184,6 +197,7 @@ export default function Section({ id, title, subtitle, content, isActive, showBu
           <Button
             variant="outline"
             size="lg"
+            onClick={() => setModal({ open: true })}
             className="text-[#FF4D00] bg-transparent border-[#FF4D00] hover:bg-[#FF4D00] hover:text-black transition-colors"
           >
             {buttonText}
