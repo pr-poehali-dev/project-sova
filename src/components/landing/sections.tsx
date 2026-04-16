@@ -4,7 +4,7 @@ export const sections = [
   {
     id: 'hero',
     subtitle: <Badge variant="outline" className="text-[#FF4D00] border-[#FF4D00]">Новый сезон — новый уровень</Badge>,
-    title: "Доминируй в CS2.",
+    title: "EXHACK — Доминируй в CS2.",
     showButton: true,
     buttonText: 'Купить чит'
   },
@@ -50,9 +50,9 @@ export const sections = [
   },
   {
     id: 'join',
-    title: 'Начни побеждать сейчас',
+    title: 'Начни с EXHACK сейчас',
     content: 'Подключись за 5 минут. Гарантия безопасности, круглосуточная поддержка и регулярные обновления после каждого патча CS2.',
     showButton: true,
-    buttonText: 'Купить доступ'
+    buttonText: 'Купить EXHACK'
   },
 ]
