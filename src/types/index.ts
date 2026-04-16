@@ -8,6 +8,12 @@ export interface PricingPlan {
   highlighted?: boolean
 }
 
+export interface CheatFeature {
+  name: string
+  description: string
+  icon: string
+}
+
 export interface Section {
   id: string
   title: string
@@ -16,6 +22,8 @@ export interface Section {
   showButton?: boolean
   buttonText?: string
   pricing?: PricingPlan[]
+  image?: string
+  features?: CheatFeature[]
 }
 
 export interface SectionProps extends Section {
