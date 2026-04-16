@@ -11,10 +11,10 @@ export default function Layout({ children }: LayoutProps) {
       <div className="absolute inset-0 z-10">
         <Squares
           direction="diagonal"
-          speed={0.5}
-          squareSize={40}
-          borderColor="#333"
-          hoverFillColor="#222"
+          speed={0.8}
+          squareSize={44}
+          borderColor="#1a0a00"
+          hoverFillColor="#2a1000"
         />
       </div>
       <div className="relative z-20 h-full">
